@@ -8,10 +8,16 @@
 #    6.  文件改变时又得输入命令行，所以webpack hello.js hello.bundle.js --module-bind 'css=style-loader!css-loader' --watch 文件自动更新
 #
 # 二
-# 配置 webpack.config.js
-# module.exports = {
-    entry: './src/script/main.js',//打包来源
-    output: {
-    	filename: 'dist/bundle.js'//打包到和打包成某文件
-    }	
-  }
+# 1.配置 webpack.config.js
+#   module.exports = {
+       entry: './src/script/main.js',//打包来源
+       output: {
+    	   filename: 'dist/bundle.js'//打包到和打包成某文件
+       }	
+    }
+    2.package.json 可以给这个文件里添加一些命令行参数
+
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "webpack": "webpack --config.webpack-config.js --progress --display-modules --colors --display-reason"
+  },

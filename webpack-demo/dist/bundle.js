@@ -65,11 +65,20 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackMissingModule() { throw new Error("Cannot find module \".src/script/main.js\""); }());
+module.exports = __webpack_require__(1);
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
-function helloworld(){
-	console.log("ok");
+function a(){
+	alert('a');
 }
+
 
 /***/ })
 /******/ ]);
