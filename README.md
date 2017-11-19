@@ -21,3 +21,19 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "webpack": "webpack --config.webpack-config.js --progress --display-modules --colors --display-reason"
   },
+
+  三.引入插件 html-webpack-plugin --save-dev //每次生成的js文件自动改变
+  配置文件中使用：
+              const HtmlWebpackPlugin = require('html-webpack-plugin');//installed via npm
+              const webpack = require('webpack');//to access built-in plugins
+              
+              output:{
+                  path: __dirname + '/dist',   //html 文件的位置
+                  filename:'js/[name]-[chunkhash].js'    //[name],[hash],[chunkhash]//html 引入的js文件的目录
+              },
+              plugins: [
+                new webpack.optimize.UglifyJsPlugin(),
+                new HtmlWebpackPlugin({
+                  template:'index.html'
+                })
+            ]
